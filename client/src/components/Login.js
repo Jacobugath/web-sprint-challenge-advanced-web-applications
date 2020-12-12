@@ -10,7 +10,7 @@ export default function Login(){
     const handlesumbit = (e) =>{
         console.log('running')
         e.preventDefault();
-        axiosWithAuth().post('http://localhost:5000/api/login', { username: 'Lambda School', password: 'i<3Lambd4' }).then(response => {
+        axiosWithAuth().post('http://localhost:5000/api/login', { username: username.value, password: password.value }).then(response => {
             console.log(response.data);
             localStorage.setItem('token', response.data.payload);
             setLoggedIn(true);
